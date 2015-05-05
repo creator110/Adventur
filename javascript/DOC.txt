@@ -1,0 +1,6 @@
+- Eingabefeld ueber html <input>
+- Ausgabefeld ueber html <textarea>
+- Eingabe wird mit dem Button "senden" uebermittelt
+- Eingabe wird mit der Funktion "auswerten()" ueberprüft ( if...else if...else if... end if ) und dann 
+  wird der Text der zu dem eingegebenen Schluesselwort passt an 
+  das Textarea uebergeben.
