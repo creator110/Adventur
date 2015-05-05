@@ -1,15 +1,12 @@
 <html style="background:#1c1c1c">
-	
-	<!-- Ausgabefeld -->
 	<form name="ausgabe">
-		<textarea name="ausgabefeld" cols=150 rows=50 
+		<textarea name="ausgabefeld" cols=150 rows=50 readonly
 				style="background:#1c1c1c; border:none; color:gray">
 	
 		</textarea>
 	
 	</form>
 	
-	<!-- Eingabefeld -->
 	<form name="eingabe">
 	   <input type=text size=70 name="eingabefeld" value="" 
 				style="background:#1d1d1d; color:gray; border-color:black">
@@ -17,12 +14,13 @@
 				style="background:darkgreen; border-color:green; color:black">
 	</form>
 	
-	<!-- Eingabe auswerten -->
 	<script language="JavaScript">
 	   function auswert()
 		  {
-		  if (document.eingabe.eingabefeld.value=="") alert("Du musst etwas eingeben!");
-		  else alert("ok " + document.form5.namensfeld.value + "!");
+		  if (document.eingabe.eingabefeld.value=="") document.ausgabe.ausgabefeld.value = "Du musst etwas eingeben!";
+		  else if (document.eingabe.eingabefeld.value=="hallo") document.ausgabe.ausgabefeld.value = "guten tag";
+		  else if (document.eingabe.eingabefeld.value=="bey") document.ausgabe.ausgabefeld.value = "auf wiedersehen...";
+		  else (document.ausgabe.ausgabefeld.value = "das habe ich nicht verstanden.");
 		  }
 	</script>
 	 
