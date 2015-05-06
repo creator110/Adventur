@@ -1,6 +1,8 @@
 <html style="background:#1c1c1c">
+	
+	<!-- Ausgabefeld -->
 	<form name="ausgabe">
-		<textarea name="ausgabefeld" cols=150 rows=50 readonly
+		<textarea name="ausgabefeld" cols=150 rows=25 readonly
 					style="background:#1c1c1c; border:none; color:gray">
 Guten Tag, 
 willkommen bei meinem kleinen Textadventur.
@@ -10,6 +12,7 @@ die Hilfeseite angezeigt.
 	
 	</form>
 	
+	<!-- Eingabefeld -->
 	<form name="eingabe">
 	   <input type=text size=70 name="eingabefeld" value="" 
 				style="background:#1d1d1d; color:gray; border-color:black">
@@ -17,14 +20,22 @@ die Hilfeseite angezeigt.
 				style="background:darkgreen; border-color:green; color:black">
 	</form>
 	
+	<!-- Eingabe auswerten -->
 	<script language="JavaScript">
-	   function auswert()
-		  {
-		  if (document.eingabe.eingabefeld.value=="") document.ausgabe.ausgabefeld.value = "Du musst etwas eingeben!";
-		  else if (document.eingabe.eingabefeld.value=="hallo") document.ausgabe.ausgabefeld.value = "guten tag";
-		  else if (document.eingabe.eingabefeld.value=="bey") document.ausgabe.ausgabefeld.value = "auf wiedersehen...";
-		  else (document.ausgabe.ausgabefeld.value = "das habe ich nicht verstanden.");
-		  }
+		var n = 0;
+		function auswert() {
+			if (document.eingabe.eingabefeld.value=="") document.ausgabe.ausgabefeld.value = "Du musst etwas eingeben!";
+			else if (document.eingabe.eingabefeld.value=="hallo") document.ausgabe.ausgabefeld.value = "guten tag";
+			else if (document.eingabe.eingabefeld.value=="bey") document.ausgabe.ausgabefeld.value = "auf wiedersehen...";
+			else if (document.eingabe.eingabefeld.value=="wie geht es dir") document.ausgabe.ausgabefeld.value = "Ich stelle einen Fiktiven Charakter von dir dar, \n also solltest du dich ehr fragen: \n Wie geht es mir?";
+			else if (document.eingabe.eingabefeld.value=="n") document.ausgabe.ausgabefeld.value = "du gehst nach norden";
+			else if (document.eingabe.eingabefeld.value=="wo bin ich") document.ausgabe.ausgabefeld.value = "n:"+n;
+			else (document.ausgabe.ausgabefeld.value = "das habe ich nicht verstanden.");
+			
+			function gehen() {
+				if (document.eingabe.eingabefeld.value=="n") n++;
+			}
+		}
 	</script>
 	
 	 
